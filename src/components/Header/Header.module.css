@@ -1,0 +1,33 @@
+.logo {
+    margin: 10px;
+    font-size: 35px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: blue;
+}
+
+.navWrapper {
+    display: flex;
+    align-items: center; 
+}
+
+.navWrapper li {
+    list-style-type: none;
+    margin: 10px;
+}
+
+.navWrapper li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.navWrapper li a:hover {
+    color: black;
+}

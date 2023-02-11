@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
+import Button from '../../Buttons/Button';
 const Signup = () => {
   
 
@@ -14,7 +14,6 @@ const Signup = () => {
       <input
         type="text"
         id="name"
-       
       />
 
       <label htmlFor="email">Email:</label>
@@ -22,7 +21,6 @@ const Signup = () => {
         type="email"
         id="email"
      
-       
       />
 
       <label htmlFor="password">Password:</label>
@@ -30,10 +28,9 @@ const Signup = () => {
         type="password"
         id="password"
        
-      
       />
 
-      <button type="submit">Sign Up</button>
+      <Button text='Signup' onClick={handleSubmit}/>
     </form>
   );
 };

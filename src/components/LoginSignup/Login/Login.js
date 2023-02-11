@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Button from '../../Buttons/Button';
 const Login = ({ onSubmit }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -27,7 +27,7 @@ const Login = ({ onSubmit }) => {
         onChange={(event) => setPassword(event.target.value)}
       />
 
-      <button type="submit">Submit</button>
+      <Button text='Submit' onClick={handleSubmit}/>
     </form>
   );
 };

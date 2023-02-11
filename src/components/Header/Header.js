@@ -2,6 +2,7 @@ import Button from '../Buttons/Button';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom"
 import Login from '../LoginSignup/Login/Login';
+import style from './Header.module.css'
 const Header = () => {
     
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,9 +19,10 @@ const Header = () => {
     };
 
     return (
-        <header>
-            <nav>
-                <h1>Egovernance</h1> {!isLoggedIn ? (
+        <header className={style.header}>
+                <h1 className={style.logo}>Egovernance</h1> 
+            <nav className={style.navWrapper}>
+                {!isLoggedIn ? (
                     <>
                         <li><Link to="/login">Login</Link></li>
                         <li><Link to="/signup">Sign up</Link></li>
