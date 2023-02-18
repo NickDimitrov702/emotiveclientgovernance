@@ -7,20 +7,23 @@ import PrivateRoute from './components/Privetrout/PrivetRout';
 import Login from './components/LoginSignup/Login/Login';
 import Signup from './components/LoginSignup/Signup/Signup';
 import Dashbord from './components/Body/Dashboard/Dashboard';
+import { AuthProvider } from './context/authContext';
 function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
-        <Routes>
-          <Route exact path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path='/dashboard' element={
-            <PrivateRoute>
-              <Dashbord />
-            </PrivateRoute>
-          } />
-        </Routes>
+        <AuthProvider>
+          <Header />
+          <Routes>
+            <Route exact path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path='/dashboard' element={
+              <PrivateRoute>
+                <Dashbord />
+              </PrivateRoute>
+            } />
+          </Routes>
+        </AuthProvider>
       </Router>
     </div>
   );
