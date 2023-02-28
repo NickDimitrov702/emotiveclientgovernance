@@ -11,8 +11,8 @@ import { AuthProvider } from './context/authContext';
 function App() {
   return (
     <div className="App">
-      <Router>
-        <AuthProvider>
+      <AuthProvider>
+        <Router>
           <Header />
           <Routes>
             <Route exact path="/login" element={<Login />} />
@@ -23,8 +23,8 @@ function App() {
               </PrivateRoute>
             } />
           </Routes>
-        </AuthProvider>
-      </Router>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
