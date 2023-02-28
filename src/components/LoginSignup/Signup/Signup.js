@@ -14,7 +14,7 @@ const Signup = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    console.log(emailRef.current.value)
+    console.log(passwordRef.current.value)
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       setError('Passwords do not match')
@@ -45,7 +45,6 @@ const Signup = () => {
     setLoading(false)
 
 
-
   }
 
   return (
@@ -72,7 +71,7 @@ const Signup = () => {
 
         </div>
         <input type="submit" value="Submit" />
-        <span><Link to='/log-in'>Already have an account ?</Link></span>
+        <span><Link to='/login'>Already have an account ?</Link></span>
         {/* Wont be able to re-submit our form since we are using the loading state, disabled={loading} the btn will be disabled */}
       </form>
     </div>

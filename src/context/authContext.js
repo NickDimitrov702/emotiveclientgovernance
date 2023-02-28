@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react"
-import { app } from "../services/firebase"
+import { auth } from "../services/firebase"
 // Setting the context from react
 const AuthContext = React.createContext()
 
@@ -16,16 +16,16 @@ export function AuthProvider({ children }) {
     
     // This is the function that will sign-up the user, using firebase auth methods.
     function signup(email, password) {
-        return app.auth.createUserWithEmailAndPassword(email, password)
+        return auth.createUserWithEmailAndPassword(email, password)
         // NOTE: In firebase password needs to be 6 or more charecters, e-mail needs to be with proper format.
     }
 
     function login(email, password) {
-        return app.auth.signInWithEmailAndPassword(email, password)
+        return auth.signInWithEmailAndPassword(email, password)
     }
 
     function logout() {
-        return app.auth.signOut()
+        return auth.signOut()
     }
 
     
@@ -34,12 +34,12 @@ export function AuthProvider({ children }) {
         // onAuthStChange returns a unsubscribe method that will automatically unsubscribe from the listener, that is why it 
         // is set a const unsubscribe. 
      
-        // const unsubscribe = app.auth.onAuthStateChanged(user => {
-        //     setCurrentUser(user)
-        //     setLoading(false)
-        // })
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            setCurrentUser(user)
+            setLoading(false)
+        })
 
-        // return unsubscribe
+        return unsubscribe
 
     }, [])
 
